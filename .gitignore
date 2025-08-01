@@ -1,0 +1,57 @@
+# === Python ===
+__pycache__/
+*.py[cod]
+*.sqlite3
+*.pyo
+*.pyd
+*.pyc
+
+# === Virtualenv ===
+venv/
+env/
+ENV/
+*.egg-info/
+.eggs/
+
+# === Django ===
+*.log
+*.pot
+*.pyc
+db.sqlite3
+media/
+staticfiles/
+
+# === Docker ===
+*.pid
+*.tar
+*.sock
+docker-compose.override.yml
+
+# === Secrets ===
+.env
+.env.*
+
+# === VS Code ===
+.vscode/
+
+# === macOS ===
+.DS_Store
+
+# === Pip ===
+pip-wheel-metadata/
+__pypackages__/
+
+# === Build ===
+build/
+dist/
+*.whl
+
+# === My Wheel Storage (optional) ===
+whl_storage/
+
+# === Node (if you add frontend later) ===
+node_modules/
+*.lock
+
+
+static-server-cdn-file-folder/
