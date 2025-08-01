@@ -36,7 +36,12 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
+
+    # "whitenoise.runserver_nostatic",
+
     'django.contrib.staticfiles',
+
+    "rest_framework",
 
     "packages",
 ]
@@ -122,10 +127,11 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 
-STATIC_ROOT = "static-server-cdn-file-folder"
+STATIC_ROOT = BASE_DIR / "static_root"
+STATIC_ROOT.mkdir(exist_ok=True, parents=True)
 
 STATICFILES_DIRS = [
-    # BASE_DIR / "staticfiles"
+    BASE_DIR / "staticfiles"
 ]
 
 STORAGES = {
@@ -134,6 +140,12 @@ STORAGES = {
         "BACKEND": "whitenoise.storage.CompressedManifestStaticFilesStorage",
     },
 }
+
+# Media settings
+MEDIA_URL = "/media/"
+
+MEDIA_ROOT = BASE_DIR / "whl_storage"
+MEDIA_ROOT.mkdir(exist_ok=True, parents=True)
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
